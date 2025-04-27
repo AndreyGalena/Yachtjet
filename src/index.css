@@ -1,13 +1,163 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Common styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p:last-child {
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+    font-style: normal;
+}
+
+button {
+    font-family: inherit;
+    color: currentColor;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----------------------------------------------------------------- */
+/* base-styly */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0e1823;
+    color: #040306;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+a,
+button,
+svg,
+input,
+input::placeholder {
+    transition-duration: 250ms;
+    transition-property: color, fill, background-color, border, box-shadow, visibility,
+        opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a,
+button {
+    cursor: url('./img/icons/cursor.svg'), pointer;
+}
+
+button {
+    font-family: inherit;
+    color: currentColor;
+    cursor: pointer;
+    max-width: 141px;
+    padding: 14px 32px;
+}
+
+@media only screen and (min-width: 768px) {
+    button {
+        max-width: 179px;
+        padding: 16px 40px;
+    }
+}
+
+.section {
+    padding: 40px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .section {
+        padding: 75px 0;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+/* Styles for Mobile devices */
+.container {
+    min-width: 320px;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding: 0 32px;
+    }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* ------------------------------------------------------- */
+/* animations */
+@keyframes slide {
+    from {
+        transform: translateX(-140%) translateY(-50%);
+    }
+
+    to {
+        transform: translateX(-104%) translateY(-50%);
+    }
+}
+
+@keyframes stretch {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(100%) scale(0.2);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(100%) scale(1);
+    }
 }
